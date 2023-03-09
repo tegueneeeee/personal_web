@@ -15,18 +15,15 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.only(
-                top: 50.0,
-                bottom: 25.0,
-              ),
-              child: TextButton(
-                child: const FaIcon(
-                  FontAwesomeIcons.peopleRoof,
-                  size: 100.0,
+                margin: const EdgeInsets.only(
+                  top: 50.0,
+                  bottom: 25.0,
                 ),
-                onPressed: () {},
-              ),
-            ),
+                child: const CircleAvatar(
+                  backgroundImage: AssetImage('images/profile.jpeg'),
+                  backgroundColor: Colors.transparent,
+                  radius: 85.0,
+                )),
             Text(
               "Tegueneeeee",
               style: Theme.of(context).textTheme.headlineMedium,
@@ -52,30 +49,27 @@ class HomePage extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 SocialButton(
-                  onPressed: () {},
+                  link: 'https://github.com/tegueneeeee',
                   icon: FontAwesomeIcons.github,
                 ),
                 SocialButton(
-                  onPressed: () {},
+                  link: 'https://www.linkedin.com/in/taekwon-kim-156986231/',
                   icon: FontAwesomeIcons.linkedin,
                 ),
                 SocialButton(
-                  onPressed: () {},
+                  link: '',
                   icon: FontAwesomeIcons.discord,
                 ),
                 SocialButton(
-                  onPressed: () {},
+                  link:
+                      'mailto:kimxordnjs@naver.com?subject=[Tegueneeeee Web]-Your Tilte',
                   icon: Icons.mail,
                 ),
                 SocialButton(
-                  onPressed: () {},
+                  link: 'https://www.instagram.com/tegueneeeee/',
                   icon: FontAwesomeIcons.instagram,
-                ),
-                SocialButton(
-                  onPressed: () {},
-                  icon: FontAwesomeIcons.line,
                 ),
               ],
             ),
