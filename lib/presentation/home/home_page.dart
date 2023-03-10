@@ -1,7 +1,10 @@
+import 'package:app/presentation/home/home_event.dart';
+import 'package:app/presentation/home/home_view_model.dart';
 import 'package:app/presentation/widgets/layout/layout.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/social_button.dart';
 
@@ -10,21 +13,43 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = context.watch<HomeVIewModel>();
     return Layout(
       bodyWidget: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-                margin: const EdgeInsets.only(
-                  top: 50.0,
-                  bottom: 25.0,
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              margin: const EdgeInsets.only(
+                top: 50.0,
+                bottom: 25.0,
+              ),
+              padding: EdgeInsets.all(
+                viewModel.state.isAvatarHoverd ? 5.0 : 15.0,
+              ),
+              width: 150.0,
+              height: 150.0,
+              child: ElevatedButton(
+                onHover: (isHovered) {
+                  viewModel.onEvent(HomeEvent.avatarHover(isHovered));
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(85.0),
+                  ),
+                  backgroundColor: Colors.transparent,
+                  padding: const EdgeInsets.all(10.0),
+                ),
+                onPressed: () => viewModel.onEvent(
+                  HomeEvent.goToAbout(context),
                 ),
                 child: const CircleAvatar(
                   backgroundImage:
                       NetworkImage('assets/assets/images/profile.jpeg'),
-                  backgroundColor: Colors.transparent,
                   radius: 85.0,
-                )),
+                ),
+              ),
+            ),
             Text(
               "Kim Taekwon",
               style: Theme.of(context).textTheme.headlineMedium,

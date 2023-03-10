@@ -3,6 +3,8 @@ import 'package:app/presentation/widgets/layout/layout_view_model.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
+import '../presentation/home/home_view_model.dart';
+
 List<SingleChildWidget> globarProvider = [
   ...independentModels,
   ...dependentModels,
@@ -18,9 +20,7 @@ List<SingleChildWidget> viewModels = [
   ChangeNotifierProvider<LayoutViewModel>(
     create: (context) => LayoutViewModel(),
   ),
-  // ChangeNotifierProvider<HomeVIewModel>(
-  //   create: (context) => HomeVIewModel(
-  //     context.read<AppTheme>(),
-  //   ),
-  // )
+  ChangeNotifierProvider<HomeVIewModel>(
+    create: (context) => HomeVIewModel(),
+  )
 ];

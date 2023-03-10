@@ -21,7 +21,6 @@ class Layout extends StatelessWidget {
         title: Container(
           padding: const EdgeInsets.symmetric(horizontal: 50.0),
           child: TextButton(
-            onHover: (value) {},
             onPressed: () => viewModel.onEvent(LayoutEvent.goToHome(context)),
             child: const Text(
               "Tegueneeeee",
