@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
                   radius: 85.0,
                 )),
             Text(
-              "Tegueneeeee",
+              "Kim Taekwon",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(
