@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
                   TypewriterAnimatedText(
                     'Software Engineer',
                     cursor: '|',
-                    speed: const Duration(milliseconds: 80),
+                    speed: const Duration(milliseconds: 150),
                   ),
                 ],
               ),

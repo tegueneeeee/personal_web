@@ -1,3 +1,4 @@
+import 'package:app/presentation/widgets/about_container.dart';
 import 'package:app/presentation/widgets/layout/layout.dart';
 import 'package:flutter/material.dart';
 
@@ -10,35 +11,43 @@ class AboutPage extends StatelessWidget {
         bodyWidget: SingleChildScrollView(
       child: Column(
         children: [
-          Container(
-            color: Colors.amber,
-            width: 1000,
-            height: 300,
-            padding: const EdgeInsets.all(30.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    '#',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blueAccent,
-                    ),
-                  ),
+          const AboutContainer(
+            title: 'About Me',
+            widgets: [
+              Text('BirthDay : 1993.05.31'),
+              Text('Location : Japan, Tokyo'),
+              Text('Email       : kimxordnjs@naver.com'),
+            ],
+          ),
+          const AboutContainer(
+            title: 'Languages',
+            widgets: [],
+          ),
+          const AboutContainer(
+            title: 'Experience',
+            widgets: [],
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            style: const ButtonStyle(
+              padding: MaterialStatePropertyAll(
+                EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 30,
                 ),
-                const Text(
-                  'About Me',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+              ),
+              backgroundColor: MaterialStatePropertyAll(
+                Colors.black,
+              ),
             ),
-          )
+            child: const Text(
+              'Download CV',
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
         ],
       ),
     ));
